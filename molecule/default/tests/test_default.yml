@@ -1,12 +1,9 @@
 ---
-package:
-  orchestrator:
-    installed: true
 port:
-  tcp:3000:
+  tcp6:3000:
     listening: true
     ip:
-      - 0.0.0.0
+      - "::"
 service:
   orchestrator:
     enabled: true
