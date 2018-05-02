@@ -1,0 +1,24 @@
+---
+package:
+  orchestrator:
+    installed: true
+port:
+  tcp:3000:
+    listening: true
+    ip:
+      - 0.0.0.0
+service:
+  orchestrator:
+    enabled: true
+    running: true
+user:
+  orchestrator:
+    exists: true
+    groups:
+      - orchestrator
+group:
+  orchestrator:
+    exists: true
+process:
+  orchestrator:
+    running: true
