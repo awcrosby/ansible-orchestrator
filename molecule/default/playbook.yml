@@ -21,6 +21,8 @@
         - sudo
         - python-apt
         - software-properties-common
+        - tar
+        - unzip
     - name: install percona mysql repo
       shell: curl -O https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb && dpkg -i percona-release_0.1-4.$(lsb_release -sc)_all.deb
       args:
