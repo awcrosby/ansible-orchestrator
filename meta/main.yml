@@ -13,5 +13,5 @@ galaxy_info:
     - molecule
 
 dependencies:
-  - {role: jsecchiero.orchestrator, version: 1.0.6}
+  - {role: jsecchiero.orchestrator, version: 1.0.7}
   # List your role dependencies here, one per line.

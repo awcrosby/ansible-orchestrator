@@ -6,4 +6,4 @@
 - src: entercloudsuite.mysql
   version: 1.0.0
 - src: jsecchiero.orchestrator
-  version: 1.0.6
+  version: 1.0.7
