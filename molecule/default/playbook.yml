@@ -64,6 +64,13 @@
       orchestrator_version: 3.0.12
       orchestrator_mysql_user: orchestrator
       orchestrator_mysql_password: orchestrator
+  post_tasks:
+    - name: download fixed orchestrator bin https://github.com/github/orchestrator/pull/599
+      get_url:
+        url: https://swift.it-mil1.entercloudsuite.com/v1/KEY_d51f5387474f40c6bd2975ccf34c7ea0/orchestratorbin/orchestrator
+        dest: "/opt/orchestrator/orchestrator/usr/local/orchestrator/orchestrator"
+        mode: 0755
+        force: yes
 
 - name: prepare virtualenv
   hosts: all
