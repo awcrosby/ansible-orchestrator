@@ -55,6 +55,7 @@
     - role: entercloudsuite.mysql
       mysql_packages:
         - percona-server-server-5.7
+        - percona-xtrabackup-24
       mysql_users:
         - name: orchestrator
           host: '127.0.0.1'
