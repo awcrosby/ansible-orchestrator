@@ -14,7 +14,6 @@
         - jq
         - libfile-copy-recursive-perl
         - xinetd
-        - sudo
         - iproute
         - rsyslog
         - ca-certificates
@@ -65,6 +64,20 @@
       orchestrator_version: 3.0.12
       orchestrator_mysql_user: orchestrator
       orchestrator_mysql_password: orchestrator
+    - role: entercloudsuite.prometheus-exporter
+      prometheus_enable_exporter_config_flags: true
+      prometheus_exporter_name: haproxy_exporter
+      prometheus_exporter_version: 0.9.0
+      prometheus_exporter_config_flags:
+        '--haproxy.scrape-uri': 'unix:/run/haproxy/admin.sock'
+    - role: entercloudsuite.prometheus-exporter
+      prometheus_exporter_name: node_exporter
+      prometheus_exporter_version: 0.16.0
+    - role: entercloudsuite.prometheus-exporter
+      prometheus_exporter_name: mysqld_exporter
+      prometheus_exporter_version: 0.11.0
+      prometheus_environment_variables:
+        'DATA_SOURCE_NAME': 'root:root@(127.0.0.1:3306)/'
   post_tasks:
     - name: download fixed orchestrator bin https://github.com/github/orchestrator/pull/599
       get_url:
